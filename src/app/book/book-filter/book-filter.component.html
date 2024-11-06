@@ -1,0 +1,5 @@
+<div>
+  <input type="text" [value]="query$()" (keyup)="inputChange($event)" />
+  <button (click)="orderChange.emit('asc')">Alphabétique</button>
+  <button (click)="orderChange.emit('desc')">Alphabétique Inverse</button>
+</div>

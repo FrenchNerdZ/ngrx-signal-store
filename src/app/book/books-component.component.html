@@ -1,0 +1,13 @@
+<h1>Books ({{ store.booksCount() }})</h1>
+<app-book-filter
+  [query]="store.filter.query()"
+  [order]="store.filter.order()"
+  (queryChange)="store.updateQuery($event)"
+  (orderChange)="store.updateOrder($event)"
+/>
+
+@if(store.isLoading()){
+<h2>Chargement</h2>
+} @else {
+<app-book-list [books]="store.sortedBooks()" [isLoading]="store.isLoading()" />
+}
